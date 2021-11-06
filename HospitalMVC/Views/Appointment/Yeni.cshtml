@@ -1,0 +1,23 @@
+﻿@model HospitalMVC.ViewModels.AppointmentViewModel
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Kaydet", "Appointment", FormMethod.Post))
+{
+    <div class="form-group" style="background-size:unset">
+        @Html.LabelFor(m => m.Appointments.AppointmentDate)
+        @Html.TextBoxFor(m => m.Appointments.AppointmentDate, new { type = "date" })
+    </div>
+    <div class="form-group" style="background-size:unset">
+        @Html.LabelFor(m => m.Appointments.DoctorId)
+        @Html.DropDownListFor(m => m.Appointments.DoctorId, new SelectList(Model.Doctors, "Id", "FirstName"))
+    </div>
+    <div class="form-group" style="background-size:unset">
+        @Html.LabelFor(m => m.Appointments.SickId)
+        @Html.DropDownListFor(m => m.Appointments.SickId, new SelectList(Model.Sicks, "Id", "Tc"))
+    </div>
+    @Html.HiddenFor(m=>m.Appointments.Id)
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}

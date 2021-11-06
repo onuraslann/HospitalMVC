@@ -1,0 +1,37 @@
+﻿@model List<HospitalMVC.Models.EntityFramework.Doctors>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-success" href="/Doctor/Yeni">NewDoctor</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>DepartmanId</th>
+            <th>Phone</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doctors in Model)
+        {
+        <tr>
+            <td>@doctors.Id</td>
+            <td>@doctors.FirstName</td>
+            <td>@doctors.LastName</td>
+            <td>@doctors.Age</td>
+            <td>@doctors.Departmans.DepartmanName</td>
+            <td>@doctors.Phone</td>
+            <td><a class="btn btn-primary" href="/Doctor/Update/@doctors.Id">Update</a></td>
+            <td><a class="btn btn-warning" href="/Doctor/Delete/@doctors.Id">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,35 @@
+﻿@model List<HospitalMVC.Models.EntityFramework.Appointments>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-success" href="/Appointment/Yeni">NewAppointment</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>AppointmentDate</th>
+            <th>SickTC</th>
+            <th>DoctorName</th>
+            
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model)
+        {
+        <tr>
+            <td>@appointment.Id</td>
+            <td>@appointment.AppointmentDate.Value.ToString("dd-MM-yyyy")</td>
+            <td>@appointment.Sicks.Tc</td>
+            <td>@appointment.Doctors.FirstName</td>
+           
+            <td><a class="btn btn-primary" href="/Appointment/Update/@appointment.Id">Update</a></td>
+            <td><a class="btn btn-warning" href="/Appointment/Delete/@appointment.Id">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+

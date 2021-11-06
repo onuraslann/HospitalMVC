@@ -1,0 +1,27 @@
+﻿@model HospitalMVC.ViewModels.PrescriptionViewModel
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Kaydet", "Prescription", FormMethod.Post))
+{
+    <div class="form-group" style="background-size:unset">
+        @Html.LabelFor(m => m.Prescriptions.DoctorId)
+        @Html.DropDownListFor(m => m.Prescriptions.DoctorId, new SelectList(Model.Doctors, "Id", "FirstName"))
+
+    </div>
+    <div class="form-group" style="background-size:unset">
+        @Html.LabelFor(m => m.Prescriptions.DoctorStatment)
+        @Html.TextBoxFor(m => m.Prescriptions.DoctorStatment)
+
+    </div>
+    <div class="form-group" style="background-size:unset">
+        @Html.LabelFor(m => m.Prescriptions.PrescriptionsDate)
+        @Html.TextBoxFor(m => m.Prescriptions.PrescriptionsDate, new { type = "date" })
+
+    </div>
+    @Html.HiddenFor(m => m.Prescriptions.Id)
+
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}

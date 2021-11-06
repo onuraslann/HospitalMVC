@@ -1,0 +1,37 @@
+﻿@model HospitalMVC.ViewModels.DoctorViewModel
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Kaydet", "Doctor", FormMethod.Post))
+{
+    <div class="form-group" style="background-size:unset">
+
+        @Html.LabelFor(m => m.Doctors.FirstName)
+        @Html.TextBoxFor(m => m.Doctors.FirstName)
+    </div>
+    <div class="form-group" style="background-size:unset">
+
+        @Html.LabelFor(m => m.Doctors.LastName)
+        @Html.TextBoxFor(m => m.Doctors.LastName)
+    </div>
+    <div class="form-group" style="background-size:unset">
+
+        @Html.LabelFor(m => m.Doctors.Age)
+        @Html.TextBoxFor(m => m.Doctors.Age)
+    </div>
+    <div class="form-group" style="background-size:unset">
+
+        @Html.LabelFor(m => m.Doctors.DepartmanId)
+        @Html.DropDownListFor(m => m.Doctors.DepartmanId, new SelectList(Model.Departmans, "Id", "DepartmanName"))
+    </div>
+    <div class="form-group" style="background-size:unset">
+
+        @Html.LabelFor(m => m.Doctors.Phone)
+        @Html.TextBoxFor(m => m.Doctors.Phone)
+    </div>
+    @Html.HiddenFor(m => m.Doctors.Id)
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
