@@ -1,0 +1,18 @@
+﻿@model HospitalMVC.Models.EntityFramework.Departmans
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using(Html.BeginForm("Kaydet","Departman",FormMethod.Post))
+{
+<div class="form-group" style="background-size:unset">
+    
+    @Html.LabelFor(m=>m.DepartmanName)
+    @Html.TextBoxFor(m=>m.DepartmanName)
+</div>
+@Html.HiddenFor(m=>m.Id)
+<button type="submit" class="btn btn-success">Kaydet</button>
+}
