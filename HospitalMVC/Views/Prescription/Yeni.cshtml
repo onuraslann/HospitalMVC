@@ -3,10 +3,11 @@
     ViewBag.Title = "Yeni";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Html.AntiForgeryToken()
 
-@using (Html.BeginForm("Kaydet", "Prescription", FormMethod.Post))
+
+@using (Html.BeginForm("Kaydet", " Prescription", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="form-group" style="background-size:unset">
         @Html.LabelFor(m => m.Prescriptions.DoctorId)
         @Html.DropDownListFor(m => m.Prescriptions.DoctorId, new SelectList(Model.Doctors, "Id", "FirstName"))
@@ -22,10 +23,13 @@
         @Html.TextBoxFor(m => m.Prescriptions.PrescriptionsDate, new { type = "date" })
 
     </div>
+
     @Html.HiddenFor(m => m.Prescriptions.Id)
 
     <button type="submit" class="btn btn-success">Kaydet</button>
 }
+
+
 @section Scripts{
 
     <script src="~/Scripts/jquery.validate.min.js"></script>

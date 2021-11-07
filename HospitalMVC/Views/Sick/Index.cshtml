@@ -4,8 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<a class="btn btn-success" href="/Sick/Yeni">NewDoctor</a>
-<table class="table table-bordered">
+<a class="btn btn-success" href="/Sick/Yeni">NewSick</a>
+<table class="table table-bordered" id="tblSick">
     <thead>
         <tr>
             <th>Id</th>
@@ -35,7 +35,7 @@
             <td>@sicks.FatherName</td>
             <td>@sicks.MotherName</td>
             <td><a class="btn btn-primary" href="/Sick/Update/@sicks.Id">Update</a></td>
-            <td><a class="btn btn-warning" href="/Sick/Delete/@sicks.Id">Delete</a></td>
+            <td><a class="btn btn-warning btnSickDelete" data-id="@sicks.Id">Delete</a></td>
         </tr>
         }
     </tbody>

@@ -3,10 +3,10 @@
     ViewBag.Title = "Yeni";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Html.AntiForgeryToken()
+
 @using (Html.BeginForm("Kaydet", "Sick", FormMethod.Post))
 {
-
+    @Html.AntiForgeryToken()
     <div class="form-group" style="font-size:unset">
         @Html.LabelFor(m => m.FirstName)
         @Html.TextBoxFor(m => m.FirstName)

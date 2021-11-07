@@ -4,10 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.AntiForgeryToken()
+
 @Html.ValidationSummary()
 @using (Html.BeginForm("Kaydet", "Doctor", FormMethod.Post))
 {
+
+    @Html.AntiForgeryToken()
     <div class="form-group" style="background-size:unset">
 
         @Html.LabelFor(m => m.Doctors.FirstName)

@@ -5,7 +5,7 @@
 }
 
 <a class="btn btn-success" href="/Departman/Yeni">NewDepartman</a>
-<table class="table table-bordered">
+<table class="table table-bordered" id="tblDepartman">
     <thead>
         <tr>
             <th>Id</th>
@@ -21,7 +21,7 @@
             <td>@departman.Id</td>
             <td>@departman.DepartmanName</td>
             <td><a class="btn btn-primary" href="/Departman/Update/@departman.Id">Update</a></td>
-            <td><a class="btn btn-warning" href="/Departman/Delete/@departman.Id">Delete</a></td>
+            <td><a class="btn btn-warning btnDepartmanDelete" data-id="@departman.Id">Delete</a></td>
         </tr>
         }
     </tbody>

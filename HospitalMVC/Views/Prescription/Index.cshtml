@@ -3,8 +3,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<a class="btn btn-success" href="/Prescription/Yeni">NewAppointment</a>
-<table class="table table-bordered">
+<a class="btn btn-success" href="/Prescription/Yeni">NewPrescription</a>
+<table class="table table-bordered" id="tblPrescription">
     <thead>
         <tr>
             <th>Id</th>
@@ -26,7 +26,7 @@
                 <td>@prescription.PrescriptionsDate.Value.ToString("dd-MM-yyyy")</td>
 
                 <td><a class="btn btn-primary" href="/Prescription/Update/@prescription.Id">Update</a></td>
-                <td><a class="btn btn-warning" href="/Prescription/Delete/@prescription.Id">Delete</a></td>
+                <td><a class="btn btn-warning btnPrescriptionDelete" data-id="@prescription.Id">Delete</a></td>
             </tr>
         }
     </tbody>

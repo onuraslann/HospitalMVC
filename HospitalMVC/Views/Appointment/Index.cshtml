@@ -5,7 +5,7 @@
 }
 
 <a class="btn btn-success" href="/Appointment/Yeni">NewAppointment</a>
-<table class="table table-bordered">
+<table class="table table-bordered" id="tblAppointment">
     <thead>
         <tr>
             <th>Id</th>
@@ -27,7 +27,7 @@
             <td>@appointment.Doctors.FirstName</td>
            
             <td><a class="btn btn-primary" href="/Appointment/Update/@appointment.Id">Update</a></td>
-            <td><a class="btn btn-warning" href="/Appointment/Delete/@appointment.Id">Delete</a></td>
+            <td><a class="btn btn-warning btnAppointmentDelete" data-id="@appointment.Id" >Delete</a></td>
         </tr>
         }
     </tbody>

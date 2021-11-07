@@ -5,9 +5,10 @@
 }
 
 
-@Html.AntiForgeryToken()
+@
 @using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="form-group" style="background-size:unset">
 
         @Html.LabelFor(m => m.DepartmanName)
