@@ -11,7 +11,8 @@ namespace HospitalMVC.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Departmans
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,8 @@ namespace HospitalMVC.Models.EntityFramework
         }
     
         public int Id { get; set; }
+    
+        [Required(ErrorMessage = "DepartmanName boþ geçilemez")]
         public string DepartmanName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

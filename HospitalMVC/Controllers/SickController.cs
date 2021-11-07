@@ -7,59 +7,58 @@ using System.Web.Mvc;
 
 namespace HospitalMVC.Controllers
 {
-    public class DepartmanController : Controller
+    public class SickController : Controller
     {
         HospitalDBEntities db = new HospitalDBEntities();
-        // GET: Departman
         public ActionResult Index()
         {
-            var model = db.Departmans.ToList();
+            var model = db.Sicks.ToList();
             return View(model);
         }
         public ActionResult Yeni()
         {
-            return View("Yeni",new Departmans());
+            return View("Yeni",new Sicks());
         }
-        public ActionResult Kaydet(Departmans departmans)
+        public ActionResult Kaydet(Sicks sicks)
         {
             if (!ModelState.IsValid)
             {
                 return View("Yeni");
             }
-            if (departmans.Id == 0)
+            if (sicks.Id == 0)
             {
-                db.Departmans.Add(departmans);
+                db.Sicks.Add(sicks);
             }
             else
             {
-                var entityModel = db.Entry(departmans);
+                var entityModel = db.Entry(sicks);
                 entityModel.State = System.Data.Entity.EntityState.Modified;
             }
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Update(int id)
-        {
-            var updatedModel = db.Departmans.Find(id);
-
-            if (updatedModel == null)
-            {
-                return HttpNotFound();
-            }
-            db.SaveChanges();
-            return View("Yeni");
-        }
         public ActionResult Delete(int id)
         {
-            var deletedModel = db.Departmans.Find(id);
-
+            var deletedModel = db.Sicks.Find(id);
             if (deletedModel == null)
             {
                 return HttpNotFound();
+
             }
-            db.Departmans.Remove(deletedModel);
+            db.Sicks.Remove(deletedModel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Update(int id)
+        {
+            var deletedModel = db.Sicks.Find(id);
+            if (deletedModel == null)
+            {
+                return HttpNotFound();
+
+            }
+            return View("Yeni");
+        }
+
     }
 }

@@ -1,0 +1,55 @@
+﻿@model HospitalMVC.Models.EntityFramework.Sicks
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Kaydet", "Sick", FormMethod.Post))
+{
+
+    <div class="form-group" style="font-size:unset">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName)
+        @Html.ValidationMessageFor(m=>m.FirstName)
+    </div>
+    <div class="form-group" style="font-size:unset">
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName)
+        @Html.ValidationMessageFor(m => m.LastName)
+    </div>
+    <div class="form-group" style="font-size:unset">
+        @Html.LabelFor(m => m.DateOfBirth)
+        @Html.TextBoxFor(m => m.DateOfBirth, new { type = "date" })
+        @Html.ValidationMessageFor(m => m.DateOfBirth)
+    </div>
+    <div class="form-group" style="font-size:unset">
+        @Html.LabelFor(m => m.Tc)
+        @Html.TextBoxFor(m => m.Tc)
+        @Html.ValidationMessageFor(m => m.Tc)
+    </div>
+    <div class="form-group" style="font-size:unset">
+        @Html.LabelFor(m => m.Phone)
+        @Html.TextBoxFor(m => m.Phone)
+        @Html.ValidationMessageFor(m => m.Phone)
+    </div>
+    <div class="form-group" style="font-size:unset">
+        @Html.LabelFor(m => m.Homeland)
+        @Html.TextBoxFor(m => m.Homeland)
+        @Html.ValidationMessageFor(m => m.Homeland)
+    </div>
+
+    <div class="form-group" style="font-size:unset">
+        @Html.LabelFor(m => m.FatherName)
+        @Html.TextBoxFor(m => m.FatherName)
+        @Html.ValidationMessageFor(m => m.FatherName)
+    </div>
+    <div class="form-group" style="font-size:unset">
+        @Html.LabelFor(m => m.MotherName)
+        @Html.TextBoxFor(m => m.MotherName)
+        @Html.ValidationMessageFor(m => m.MotherName)
+    </div>
+
+@Html.HiddenFor(m=>m.Id)
+<button type="submit" class="btn btn-success">Kaydet</button>
+
+}

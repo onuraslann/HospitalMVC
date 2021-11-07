@@ -11,12 +11,16 @@ namespace HospitalMVC.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Appointments
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> AppointmentDate { get; set; }
+        [Display(Name ="SickTC")]
+        [Required(ErrorMessage ="Tc boþ geçilemez")]
         public Nullable<int> SickId { get; set; }
+        [Display(Name = "SickName")]
         public Nullable<int> DoctorId { get; set; }
     
         public virtual Doctors Doctors { get; set; }

@@ -22,13 +22,24 @@ namespace HospitalMVC.Controllers
         {
             var model = new DoctorViewModel()
             {
-                 Departmans=db.Departmans.ToList()
+                 Departmans=db.Departmans.ToList(),
+                  Doctors=new Doctors()
 
             };
             return View("Yeni",model);
         }
         public ActionResult Kaydet(Doctors doctors)
         {
+            if (!ModelState.IsValid)
+            {
+                var model = new DoctorViewModel()
+                {
+                    Departmans = db.Departmans.ToList(),
+                    Doctors = doctors
+
+                };
+                return View("Yeni", model);
+            }
             if (doctors.Id == 0)
             {
                 db.Doctors.Add(doctors);

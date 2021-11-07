@@ -11,11 +11,15 @@ namespace HospitalMVC.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Prescriptions
     {
         public int Id { get; set; }
+        [Display(Name ="DoctorName")]
+        [Required(ErrorMessage = "DoctorName")]
         public Nullable<int> DoctorId { get; set; }
+        [Required(ErrorMessage = "DoctorStatment")]
         public string DoctorStatment { get; set; }
         public Nullable<System.DateTime> PrescriptionsDate { get; set; }
     

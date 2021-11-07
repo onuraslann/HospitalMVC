@@ -22,12 +22,23 @@ namespace HospitalMVC.Controllers
             var model = new AppointmentViewModel()
             {
                  Doctors=db.Doctors.ToList(),
-                 Sicks=db.Sicks.ToList()
+                 Sicks=db.Sicks.ToList(),
+                  Appointments=new Appointments()
             };
             return View("Yeni",model);
         }
         public ActionResult Kaydet(Appointments appointments)
         {
+            if (!ModelState.IsValid)
+            {
+                var model = new AppointmentViewModel()
+                {
+                    Doctors = db.Doctors.ToList(),
+                    Sicks = db.Sicks.ToList(),
+                    Appointments = appointments
+                };
+                return View("Yeni", model);
+            }
             if (appointments.Id == 0)
             {
                 db.Appointments.Add(appointments);

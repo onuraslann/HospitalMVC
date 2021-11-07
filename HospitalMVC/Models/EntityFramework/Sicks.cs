@@ -11,7 +11,8 @@ namespace HospitalMVC.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Sicks
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,14 +22,22 @@ namespace HospitalMVC.Models.EntityFramework
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "FirstName boþ geçilemez")]
         public string FirstName { get; set; }
+        [Required(ErrorMessage = "LastName boþ geçilemez")]
         public string LastName { get; set; }
         public Nullable<System.DateTime> DateOfBirth { get; set; }
+        [Required(ErrorMessage = "Tc boþ geçilemez")]
         public string Tc { get; set; }
+        [Required(ErrorMessage = "Phone boþ geçilemez")]
         public string Phone { get; set; }
+        [Required(ErrorMessage = "Homeland boþ geçilemez")]
         public string Homeland { get; set; }
+        [Required(ErrorMessage = "FatherName boþ geçilemez")]
         public string FatherName { get; set; }
+        [Required(ErrorMessage = "MotherName boþ geçilemez")]
         public string MotherName { get; set; }
+
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointments> Appointments { get; set; }

@@ -1,0 +1,44 @@
+﻿@model List<HospitalMVC.Models.EntityFramework.Sicks>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-success" href="/Sick/Yeni">NewDoctor</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>DateOfBirth</th>
+            <th>Tc</th>
+            <th>Phone</th>
+            <th>Homeland</th>
+            <th>FatherName</th>
+            <th>MotherName</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sicks in Model)
+        {
+        <tr>
+            <td>@sicks.Id</td>
+            <td>@sicks.FirstName</td>
+            <td>@sicks.LastName</td>
+            <td>@sicks.DateOfBirth.Value.ToString("dd-MM-yyyy")</td>
+            <td>@sicks.Tc</td>
+            <td>@sicks.Phone</td>
+            <td>@sicks.Homeland</td>
+            <td>@sicks.FatherName</td>
+            <td>@sicks.MotherName</td>
+            <td><a class="btn btn-primary" href="/Sick/Update/@sicks.Id">Update</a></td>
+            <td><a class="btn btn-warning" href="/Sick/Delete/@sicks.Id">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
