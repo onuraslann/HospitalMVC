@@ -16,9 +16,10 @@
     <div>
         @Html.Partial("_Navbar")
     </div>
-   @RenderBody()
+    @RenderBody()
     <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+   @RenderSection("Scripts",false)
 </body>
 
 </html>

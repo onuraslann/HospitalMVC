@@ -18,6 +18,12 @@
         @Html.LabelFor(m => m.Appointments.SickId)
         @Html.DropDownListFor(m => m.Appointments.SickId, new SelectList(Model.Sicks, "Id", "Tc"))
     </div>
-    @Html.HiddenFor(m=>m.Appointments.Id)
+    @Html.HiddenFor(m => m.Appointments.Id)
     <button type="submit" class="btn btn-success">Kaydet</button>
+}
+@section Scripts{
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }

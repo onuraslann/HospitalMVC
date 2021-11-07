@@ -10,7 +10,7 @@
     <div class="form-group" style="font-size:unset">
         @Html.LabelFor(m => m.FirstName)
         @Html.TextBoxFor(m => m.FirstName)
-        @Html.ValidationMessageFor(m=>m.FirstName)
+        @Html.ValidationMessageFor(m => m.FirstName)
     </div>
     <div class="form-group" style="font-size:unset">
         @Html.LabelFor(m => m.LastName)
@@ -49,7 +49,13 @@
         @Html.ValidationMessageFor(m => m.MotherName)
     </div>
 
-@Html.HiddenFor(m=>m.Id)
-<button type="submit" class="btn btn-success">Kaydet</button>
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-success">Kaydet</button>
 
+}
+@section Scripts{
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }

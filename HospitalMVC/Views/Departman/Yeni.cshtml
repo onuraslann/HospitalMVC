@@ -6,14 +6,20 @@
 
 
 
-@using(Html.BeginForm("Kaydet","Departman",FormMethod.Post))
+@using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
 {
-<div class="form-group" style="background-size:unset">
-    
-    @Html.LabelFor(m=>m.DepartmanName)
-    @Html.TextBoxFor(m=>m.DepartmanName)
-    @Html.ValidationMessageFor(m=>m.DepartmanName)
-</div>
-@Html.HiddenFor(m=>m.Id)
-<button type="submit" class="btn btn-success">Kaydet</button>
+    <div class="form-group" style="background-size:unset">
+
+        @Html.LabelFor(m => m.DepartmanName)
+        @Html.TextBoxFor(m => m.DepartmanName)
+        @Html.ValidationMessageFor(m => m.DepartmanName)
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
+@section Scripts{
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
