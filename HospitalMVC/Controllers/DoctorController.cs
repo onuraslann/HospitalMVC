@@ -12,7 +12,7 @@ namespace HospitalMVC.Controllers
     {
 
         HospitalDBEntities db = new HospitalDBEntities();
-        // GET: Departman
+    
         public ActionResult Index()
         {
             var model = db.Doctors.ToList();

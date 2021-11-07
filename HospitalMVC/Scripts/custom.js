@@ -1,5 +1,5 @@
 ﻿$(function () {
-   
+    $("#tblAppointment").DataTable()
     $("#tblAppointment").on("click", ".btnAppointmentDelete", function () {
         var btn = $(this);
         bootbox.confirm("Appointmentı silmek istediğinize eminmisiniz ? ", function (result) {
@@ -24,7 +24,7 @@
 
 });
 $(function () {
-
+    $("#tblDepartman").DataTable()
     $("#tblDepartman").on("click", ".btnDepartmanDelete", function () {
         var btn = $(this);
         bootbox.confirm("Departmanı silmek istediğinize eminmisiniz ? ", function (result) {
@@ -49,7 +49,7 @@ $(function () {
 
 });
 $(function () {
-
+    $("#tblDoctor").DataTable()
     $("#tblDoctor").on("click", ".btnDoctorDelete", function () {
         var btn = $(this);
         bootbox.confirm("Doctoru silmek istediğinize eminmisiniz ? ", function (result) {
@@ -74,7 +74,7 @@ $(function () {
 
 });
 $(function () {
-
+    $("#tblPrescription").DataTable()
     $("#tblPrescription").on("click", ".btnPrescriptionDelete", function () {
         var btn = $(this);
         bootbox.confirm("Reçeteyi silmek istediğinize eminmisiniz ? ", function (result) {
@@ -99,7 +99,7 @@ $(function () {
 
 });
 $(function () {
-
+    $("#tblSick").DataTable()
     $("#tblSick").on("click", ".btnSickDelete", function () {
         var btn = $(this);
         bootbox.confirm("Hastayı silmek istediğinize eminmisiniz ? ", function (result) {
