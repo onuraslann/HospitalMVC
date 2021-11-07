@@ -25,6 +25,7 @@ namespace HospitalMVC.Controllers
             };
             return View("Yeni", model);
         }
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Prescriptions prescriptions)
         {
             if (prescriptions.Id == 0)

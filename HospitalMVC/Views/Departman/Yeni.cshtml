@@ -5,7 +5,7 @@
 }
 
 
-
+@Html.AntiForgeryToken()
 @using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
 {
     <div class="form-group" style="background-size:unset">

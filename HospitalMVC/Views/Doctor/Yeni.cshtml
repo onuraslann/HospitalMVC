@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+@Html.AntiForgeryToken()
 @Html.ValidationSummary()
 @using (Html.BeginForm("Kaydet", "Doctor", FormMethod.Post))
 {

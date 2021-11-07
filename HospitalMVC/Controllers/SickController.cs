@@ -19,6 +19,7 @@ namespace HospitalMVC.Controllers
         {
             return View("Yeni",new Sicks());
         }
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Sicks sicks)
         {
             if (!ModelState.IsValid)

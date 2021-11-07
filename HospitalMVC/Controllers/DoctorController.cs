@@ -28,6 +28,7 @@ namespace HospitalMVC.Controllers
             };
             return View("Yeni",model);
         }
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Doctors doctors)
         {
             if (!ModelState.IsValid)
