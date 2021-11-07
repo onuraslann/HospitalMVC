@@ -8,9 +8,11 @@ using System.Web.Mvc;
 
 namespace HospitalMVC.Controllers
 {
+    [Authorize(Roles = "admin,editor")]
     public class PrescriptionController : Controller
     {
         HospitalDBEntities db = new HospitalDBEntities();
+       
         public ActionResult Index()
         {
             var model = db.Prescriptions.ToList();

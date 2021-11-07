@@ -7,10 +7,12 @@ using System.Web.Mvc;
 
 namespace HospitalMVC.Controllers
 {
+    [Authorize(Roles = "admin,editor")]
     public class DepartmanController : Controller
     {
         HospitalDBEntities db = new HospitalDBEntities();
-        // GET: Departman
+      
+
         public ActionResult Index()
         {
             var model = db.Departmans.ToList();

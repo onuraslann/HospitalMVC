@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace HospitalMVC.Controllers
 {
+    [Authorize(Roles = "admin,editor")]
     public class SickController : Controller
     {
         HospitalDBEntities db = new HospitalDBEntities();

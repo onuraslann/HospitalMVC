@@ -12,7 +12,8 @@ namespace HospitalMVC.Controllers
     {
 
         HospitalDBEntities db = new HospitalDBEntities();
-    
+        [Authorize(Roles = "admin,editor")]
+
         public ActionResult Index()
         {
             var model = db.Doctors.ToList();

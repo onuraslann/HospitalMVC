@@ -8,9 +8,11 @@ using System.Web.Security;
 
 namespace HospitalMVC.Controllers
 {
+    [Authorize(Roles = "admin,editor")]
     public class SecurityController : Controller
     {
         HospitalDBEntities db = new HospitalDBEntities();
+       
         [HttpGet]
         [AllowAnonymous]
         public ActionResult Login()

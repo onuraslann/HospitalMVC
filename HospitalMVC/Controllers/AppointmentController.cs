@@ -8,10 +8,12 @@ using System.Web.Mvc;
 
 namespace HospitalMVC.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AppointmentController : Controller
     {
-
+      
         HospitalDBEntities db = new HospitalDBEntities();
+      
         public ActionResult Index()
         {
             var model = db.Appointments.ToList();
